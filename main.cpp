@@ -1,8 +1,11 @@
 #include<stdio.h>
-#include"glad/glad.h"
-#include"GLFW/glfw3.h"
-int main()
+#include"src/QtGui/Mainwindow.h"
+#include<qapplication.h>
+int main(int argc ,char** argv)
 {
-	glfwInit();
-	return 0;
+	QApplication app(argc, argv);
+	Mainwindow* window = new Mainwindow;
+	window->show();
+	return app.exec();
+
 }

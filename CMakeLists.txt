@@ -19,9 +19,10 @@ add_subdirectory(${CommonData_Path})
 # 规定.h头文件路径
 include_directories(${openGL_Path}/include)           #设置包含头文件路径
 
-# 生成可执行文件
-add_executable(zGLModule main.cpp )
+# 生成可执行文件,其中WIN32用于去掉控制台
+add_executable(zGLModule WIN32 main.cpp )  
+
 
 # 链接操作
-target_link_libraries(zGLModule
-    glad)
+target_link_libraries(zGLModule 
+    glad QtGui)
