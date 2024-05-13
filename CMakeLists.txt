@@ -25,4 +25,4 @@ add_executable(zGLModule WIN32 main.cpp )
 
 # 链接操作
 target_link_libraries(zGLModule 
-    glad QtGui)
+     QtGui)

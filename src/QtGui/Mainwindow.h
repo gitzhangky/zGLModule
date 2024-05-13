@@ -13,6 +13,6 @@ public:
 
 
 private:
-	QVBoxLayout* mainLayout;
-	OpenGLWidget* openglWidget;
+	OpenGLWidget* openGLWidget;
+
 };
