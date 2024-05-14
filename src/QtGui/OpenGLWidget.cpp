@@ -2,28 +2,31 @@
 #include"Render.h"
 
 #include<qmessagebox.h>
-
-OpenGLWidget::OpenGLWidget(QWidget* parent) :QOpenGLWidget(parent)
+namespace widgets
 {
-
-}
-
-void OpenGLWidget::initializeGL()
-{
-	render = new Render;
-	bool isOk = render->initGlad();       //×¢Òâ£ºgladLoadGL()±ØÐëÐ´ÔÚinitializeGL()º¯ÊýÖÐ£¬·ñÔò»á³ö´í£¬±ÜÃâ²È¿Ó£¡
-	if (!isOk)
+	OpenGLWidget::OpenGLWidget(QWidget* parent) :QOpenGLWidget(parent)
 	{
-		QMessageBox::warning(this, "´íÎóÌáÐÑ", "äÖÈ¾¿â¼ÓÔØÊ§°Ü!", QMessageBox::Ok);
+
 	}
 
-	render->loadShader();
+	void OpenGLWidget::initializeGL()
+	{
+		render = new Render;
+		bool isOk = render->initGlad();       //×¢Òâ£ºgladLoadGL()±ØÐëÐ´ÔÚinitializeGL()º¯ÊýÖÐ£¬·ñÔò»á³ö´í£¬±ÜÃâ²È¿Ó£¡
+		if (!isOk)
+		{
+			QMessageBox::warning(this, "´íÎóÌáÐÑ", "äÖÈ¾¿â¼ÓÔØÊ§°Ü!", QMessageBox::Ok);
+		}
+
+		render->loadShader();
+
+	}
+
+	void OpenGLWidget::paintGL()
+	{
+		render->paint();
+	}
+
 
 }
-
-void OpenGLWidget::paintGL()
-{
-	render->paint();
-}
-
 

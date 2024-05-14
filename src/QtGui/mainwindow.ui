@@ -1,25 +1,321 @@
-<ui version="4.0" >
- <author></author>
- <comment></comment>
- <exportmacro></exportmacro>
- <class>MainWindow</class>
- <widget class="QMainWindow" name="MainWindow" >
-  <property name="geometry" >
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Mainwindow</class>
+ <widget class="QMainWindow" name="Mainwindow">
+  <property name="geometry">
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>800</width>
-    <height>600</height>
+    <width>1199</width>
+    <height>662</height>
    </rect>
   </property>
-  <property name="windowTitle" >
+  <property name="windowTitle">
    <string>MainWindow</string>
   </property>
-  <widget class="QMenuBar" name="menubar" />
-  <widget class="QWidget" name="centralwidget" />
-  <widget class="QStatusBar" name="statusbar" />
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QVBoxLayout" name="verticalLayout">
+    <item>
+     <widget class="QFrame" name="frame">
+      <property name="minimumSize">
+       <size>
+        <width>25</width>
+        <height>80</height>
+       </size>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>16777215</width>
+        <height>80</height>
+       </size>
+      </property>
+      <property name="frameShape">
+       <enum>QFrame::StyledPanel</enum>
+      </property>
+      <property name="frameShadow">
+       <enum>QFrame::Raised</enum>
+      </property>
+      <layout class="QGridLayout" name="gridLayout">
+       <item row="1" column="2">
+        <widget class="QToolButton" name="toolButton_5">
+         <property name="minimumSize">
+          <size>
+           <width>25</width>
+           <height>25</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>25</width>
+           <height>25</height>
+          </size>
+         </property>
+         <property name="text">
+          <string>...</string>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="1">
+        <widget class="QToolButton" name="toolButton_4">
+         <property name="minimumSize">
+          <size>
+           <width>25</width>
+           <height>25</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>25</width>
+           <height>25</height>
+          </size>
+         </property>
+         <property name="text">
+          <string>...</string>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="0">
+        <widget class="QToolButton" name="toolButton">
+         <property name="minimumSize">
+          <size>
+           <width>25</width>
+           <height>25</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>25</width>
+           <height>25</height>
+          </size>
+         </property>
+         <property name="text">
+          <string>...</string>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="1">
+        <widget class="QToolButton" name="toolButton_2">
+         <property name="minimumSize">
+          <size>
+           <width>25</width>
+           <height>25</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>25</width>
+           <height>25</height>
+          </size>
+         </property>
+         <property name="text">
+          <string>...</string>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="4">
+        <widget class="QToolButton" name="toolButton_8">
+         <property name="minimumSize">
+          <size>
+           <width>25</width>
+           <height>25</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>25</width>
+           <height>25</height>
+          </size>
+         </property>
+         <property name="text">
+          <string>...</string>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="3">
+        <widget class="QToolButton" name="toolButton_7">
+         <property name="minimumSize">
+          <size>
+           <width>25</width>
+           <height>25</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>25</width>
+           <height>25</height>
+          </size>
+         </property>
+         <property name="text">
+          <string>...</string>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="6">
+        <spacer name="horizontalSpacer">
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>40</width>
+           <height>20</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+       <item row="1" column="0">
+        <widget class="QToolButton" name="toolButton_6">
+         <property name="minimumSize">
+          <size>
+           <width>25</width>
+           <height>25</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>25</width>
+           <height>25</height>
+          </size>
+         </property>
+         <property name="text">
+          <string>...</string>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="2">
+        <widget class="QToolButton" name="toolButton_3">
+         <property name="minimumSize">
+          <size>
+           <width>25</width>
+           <height>25</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>25</width>
+           <height>25</height>
+          </size>
+         </property>
+         <property name="text">
+          <string>...</string>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="5">
+        <widget class="QToolButton" name="toolButton_9">
+         <property name="minimumSize">
+          <size>
+           <width>25</width>
+           <height>25</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>25</width>
+           <height>25</height>
+          </size>
+         </property>
+         <property name="text">
+          <string>...</string>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="3">
+        <widget class="QToolButton" name="toolButton_12">
+         <property name="minimumSize">
+          <size>
+           <width>25</width>
+           <height>25</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>25</width>
+           <height>25</height>
+          </size>
+         </property>
+         <property name="text">
+          <string>...</string>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="4">
+        <widget class="QToolButton" name="toolButton_10">
+         <property name="minimumSize">
+          <size>
+           <width>25</width>
+           <height>25</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>25</width>
+           <height>25</height>
+          </size>
+         </property>
+         <property name="text">
+          <string>...</string>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="5">
+        <widget class="QToolButton" name="toolButton_11">
+         <property name="minimumSize">
+          <size>
+           <width>25</width>
+           <height>25</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>25</width>
+           <height>25</height>
+          </size>
+         </property>
+         <property name="text">
+          <string>...</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </item>
+    <item>
+     <widget class="QSplitter" name="splitter">
+      <property name="orientation">
+       <enum>Qt::Horizontal</enum>
+      </property>
+      <widget class="QTreeWidget" name="treeWidget">
+       <column>
+        <property name="text">
+         <string notr="true">1</string>
+        </property>
+       </column>
+      </widget>
+      <widget class="QWidget" name="widget" native="true">
+       <property name="minimumSize">
+        <size>
+         <width>900</width>
+         <height>0</height>
+        </size>
+       </property>
+      </widget>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1199</width>
+     <height>23</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
  </widget>
- <pixmapfunction></pixmapfunction>
+ <resources/>
  <connections/>
 </ui>
-

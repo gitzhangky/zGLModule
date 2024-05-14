@@ -2,17 +2,24 @@
 #include <qboxlayout.h>
 #include"OpenGLWidget.h"
 
-class Mainwindow :public QMainWindow
+namespace Ui
 {
-public:
-	Mainwindow(QWidget* parent = nullptr);
+	class Mainwindow;
+}
 
 
+namespace widgets
+{
+	class Mainwindow :public QMainWindow
+	{
+	public:
+		Mainwindow(QWidget* parent = nullptr);
 
 
+	private:
+		OpenGLWidget* openGLWidget;
+		Ui::Mainwindow* _ui;
+	};
 
+}
 
-private:
-	OpenGLWidget* openGLWidget;
-
-};
