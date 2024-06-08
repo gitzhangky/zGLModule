@@ -3,10 +3,13 @@ cmake_minimum_required(VERSION 3.5)  #最低版本号
 
 project(zGLModule)     #创建项目名
 
-set(openGL_Path ${PROJECT_SOURCE_DIR}/openGL)    #openGL路径
+set(openGL_Path ${PROJECT_SOURCE_DIR}/thirdLib/glad)    #openGL路径
 set(QtGui_Path ${PROJECT_SOURCE_DIR}/src/QtGui)    #QtGui路径
 set(GLGui_Path ${PROJECT_SOURCE_DIR}/src/GLGui)    #QtGui路径
 set(CommonData_Path ${PROJECT_SOURCE_DIR}/src/CommonData)    #QtGui路径
+
+
+set_property(GLOBAL PROPERTY USE_FOLDERS ON)
 
 # 编译子文件夹的CMakeLists.txt
 add_subdirectory(${openGL_Path})
