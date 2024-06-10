@@ -24,7 +24,7 @@ include_directories(${openGL_Path}/include)           #设置包含头文件路�
 
 # 生成可执行文件,其中WIN32用于去掉控制台
 add_executable(zGLModule WIN32 main.cpp )  
-
+#add_executable(zGLModule main.cpp )  
 
 # 链接操作
 target_link_libraries(zGLModule 

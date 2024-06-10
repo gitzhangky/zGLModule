@@ -6,9 +6,10 @@ file(GLOB ALL_SOURCE "*.c*" "*.h*")  #获取当前目录下所有源文件
 
 file(GLOB Frag_FILES ${PROJECT_SOURCE_DIR}/../GLSL/Fragment/*.frag)  #片段着色器
 
-file(GLOB Frag_FILES ${PROJECT_SOURCE_DIR}/../GLSL/Vetex/*.vex)  #顶点着色器
+file(GLOB Vetex_FILES ${PROJECT_SOURCE_DIR}/../GLSL/Vertex/*.vert)  #顶点着色器
 
-add_library(GLGui ${ALL_SOURCE} ${Frag_FILES} )
+
+add_library(GLGui ${ALL_SOURCE} ${Frag_FILES} ${Vetex_FILES} )
 
 include_directories(${PROJECT_SOURCE_DIR}/../../thirdLib/glad/include)
 
