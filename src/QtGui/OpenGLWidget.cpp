@@ -17,7 +17,7 @@ namespace widgets
 		{
 			QMessageBox::warning(this, "´íÎóÌáÐÑ", "äÖÈ¾¿â¼ÓÔØÊ§°Ü!", QMessageBox::Ok);
 		}
-		render->loadShader();
+		render->initShaderProgram();
 		render->init_Vertext();
 
 	}

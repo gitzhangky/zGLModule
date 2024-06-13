@@ -1,6 +1,7 @@
 cmake_minimum_required(VERSION 3.5)  #最低版本号
 
 project(GLGui)
+find_package(Qt5 COMPONENTS Widgets Gui OpenGL REQUIRED)
 
 file(GLOB ALL_SOURCE "*.c*" "*.h*")  #获取当前目录下所有源文件
 
@@ -13,6 +14,6 @@ add_library(GLGui ${ALL_SOURCE} ${Frag_FILES} ${Vetex_FILES} )
 
 include_directories(${PROJECT_SOURCE_DIR}/../../thirdLib/glad/include)
 
-target_link_libraries(GLGui glad)
+target_link_libraries(GLGui glad Qt5::Core Qt5::Widgets Qt5::Gui Qt5::OpenGL)
 
 

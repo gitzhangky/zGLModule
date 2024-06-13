@@ -1,12 +1,7 @@
 #include "Render.h"
 
 #include"glad/glad.h"
-#include"GLFW/glfw3.h"
 
-#include <string>
-#include <fstream>
-#include <sstream>
-#include <iostream>
 
 
 
@@ -21,7 +16,7 @@ bool Render::initGlad()
 	return true;
 }
 
-void Render::loadShader()
+bool Render::initShaderProgram()
 {
 
 	/******************
@@ -52,20 +47,28 @@ void Render::loadShader()
 	//顶点着色器
 	glShaderSource(vertexShader, 1, &vertSource, nullptr);
 	glCompileShader(vertexShader);
-	checkCompileErrors(vertexShader, "SHADER");
-
+	if (!checkCompileErrors(vertexShader, "SHADER"))
+	{
+		return false;
+	}
 	//片段着色器
 	glShaderSource(fragmentShader, 1, &fragSource, nullptr);
 	glCompileShader(fragmentShader);
-	checkCompileErrors(fragmentShader, "SHADER");
 
+	if (!checkCompileErrors(fragmentShader, "SHADER"))
+	{
+		return false;
+	}
 	//关联着色器程序和着色器对象
 	glAttachShader(shaderProgram, vertexShader);
 	glAttachShader(shaderProgram, fragmentShader);
 	//链接
 	glLinkProgram(shaderProgram);
-	checkCompileErrors(shaderProgram, "PROGRAM");
-
+	if (!checkCompileErrors(shaderProgram, "PROGRAM"))
+	{
+		return false;
+	}
+	return true;
 }
 
 void Render::init_Vertext()
@@ -112,74 +115,7 @@ void Render::paint()
 
 }
 
-void Render::readeShaderSource(std::string sourcePath, char* shaderBuffer)
-{
-	std::string Code;
-	std::ifstream ShaderFile;
-	// ensure ifstream objects can throw exceptions:
-	ShaderFile.exceptions(std::ifstream::failbit | std::ifstream::badbit);
-	try
-	{
-		// open files
-		ShaderFile.open(sourcePath);
-		std::stringstream ShaderStream;
-		// read file's buffer contents into streams
-		ShaderStream << ShaderFile.rdbuf();
-		// close file handlers
-		ShaderFile.close();
 
-		// convert stream into string
-		Code = ShaderStream.str();
-		std::strcpy(shaderBuffer, Code.c_str());
-	}
-	catch (std::ifstream::failure& e)
-	{
-		std::cout << "ERROR::SHADER::FILE_NOT_SUCCESSFULLY_READ: " << e.what() << std::endl;
-	}
-
-}
-
-std::string Render::getShaderPath(std::string type, std::string fileName)
-{
-
-	char buff[100];
-	getcwd(buff, 100);
-	std::string path = buff;
-	if (type == "fragment")
-	{
-		shaderPath = path + "\\..\\src\\GLSL\\Fragment\\" + fileName;
-	}
-	else if (type == "vertex")
-	{
-		shaderPath = path + "\\..\\src\\GLSL\\Vertex\\" + fileName;
-	}
-	return shaderPath;
-
-}
-
-void Render::checkCompileErrors(unsigned int shader, std::string type)
-{
-	int success;
-	char infoLog[1024];
-	if (type != "PROGRAM")
-	{
-		glGetShaderiv(shader, GL_COMPILE_STATUS, &success);
-		if (!success)
-		{
-			glGetShaderInfoLog(shader, 1024, NULL, infoLog);
-			std::cout << "ERROR::SHADER_COMPILATION_ERROR of type: " << type << "\n" << infoLog << "\n -- --------------------------------------------------- -- " << std::endl;
-		}
-	}
-	else
-	{
-		glGetProgramiv(shader, GL_LINK_STATUS, &success);
-		if (!success)
-		{
-			glGetProgramInfoLog(shader, 1024, NULL, infoLog);
-			std::cout << "ERROR::PROGRAM_LINKING_ERROR of type: " << type << "\n" << infoLog << "\n -- --------------------------------------------------- -- " << std::endl;
-		}
-	}
-}
 
 Render::~Render()
 {
