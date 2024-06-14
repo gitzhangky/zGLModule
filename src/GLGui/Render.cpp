@@ -1,9 +1,14 @@
 #include "Render.h"
 
 #include"glad/glad.h"
+#include"background.h"
 
 
 
+Render::Render()
+{
+	_background = new background;
+}
 
 bool Render::initGlad()
 {
@@ -18,7 +23,7 @@ bool Render::initGlad()
 
 bool Render::initShaderProgram()
 {
-
+	_background->initShaderProgram();
 	/******************
 	创建着色器程序
 	创建着色器对象关联到着色器程序中
@@ -73,6 +78,8 @@ bool Render::initShaderProgram()
 
 void Render::init_Vertext()
 {
+	_background->init_Vertext();
+
 	/*******
 	顶点对象和缓冲对象
 	*******/
@@ -102,11 +109,13 @@ void Render::init_Vertext()
 void Render::paint()
 {
 
-
 	// render
 	// ------
 	glClearColor(0.2f, 0.3f, 0.3f, 1.0f);        //设置清空屏幕所用的颜色
 	glClear(GL_COLOR_BUFFER_BIT);                 //清空屏幕的颜色缓冲
+
+	_background->updateBackground();
+
 
 	glUseProgram(shaderProgram);
 	glBindVertexArray(VAO);

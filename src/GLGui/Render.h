@@ -5,11 +5,11 @@
 
 #include"ShaderBase.h"
 
-
+class background;
 class Render :public ShaderBase
 {
 public:
-
+	Render();
 	/*
 	* ≥ı ºªØ
 	*/
@@ -41,7 +41,7 @@ private:
 
 	unsigned int shaderProgram;
 	std::string shaderPath;
-
+	background* _background;
 };
 
 

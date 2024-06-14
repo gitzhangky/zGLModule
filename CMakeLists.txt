@@ -3,7 +3,8 @@ cmake_minimum_required(VERSION 3.5)  #最低版本号
 
 project(zGLModule)     #创建项目名
 
-set(openGL_Path ${PROJECT_SOURCE_DIR}/thirdLib/glad)    #openGL路径
+set(openGL_Path ${PROJECT_SOURCE_DIR}/thirdLib/glad)    #glad三方库
+set(glm_Path ${PROJECT_SOURCE_DIR}/thirdLib/glm-1.0.1)    #glm三方库
 set(QtGui_Path ${PROJECT_SOURCE_DIR}/src/QtGui)    #QtGui路径
 set(GLGui_Path ${PROJECT_SOURCE_DIR}/src/GLGui)    #QtGui路径
 set(CommonData_Path ${PROJECT_SOURCE_DIR}/src/CommonData)    #QtGui路径
@@ -16,6 +17,7 @@ add_subdirectory(${openGL_Path})
 add_subdirectory(${QtGui_Path})
 add_subdirectory(${GLGui_Path})
 add_subdirectory(${CommonData_Path})
+add_subdirectory(${glm_Path})
 
 
 
@@ -29,3 +31,6 @@ add_executable(zGLModule WIN32 main.cpp )
 # 链接操作
 target_link_libraries(zGLModule 
      QtGui)
+	 
+set_property(TARGET glad PROPERTY FOLDER thidLib)
+set_property(TARGET glm PROPERTY FOLDER thidLib)

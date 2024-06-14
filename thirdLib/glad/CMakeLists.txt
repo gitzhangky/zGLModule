@@ -8,4 +8,3 @@ add_library(glad STATIC ${PROJECT_SOURCE_DIR}/src/glad.c )
 
 target_link_libraries(glad ${PROJECT_SOURCE_DIR}/lib/glfw3.lib)
 
-set_property(TARGET glad PROPERTY FOLDER thidLib)

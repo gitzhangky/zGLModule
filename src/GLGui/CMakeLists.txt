@@ -13,7 +13,8 @@ file(GLOB Vetex_FILES ${PROJECT_SOURCE_DIR}/../GLSL/Vertex/*.vert)  #顶点着�
 add_library(GLGui ${ALL_SOURCE} ${Frag_FILES} ${Vetex_FILES} )
 
 include_directories(${PROJECT_SOURCE_DIR}/../../thirdLib/glad/include)
+include_directories(${PROJECT_SOURCE_DIR}/../../thirdLib/glm-1.0.1/glm)
 
-target_link_libraries(GLGui glad Qt5::Core Qt5::Widgets Qt5::Gui Qt5::OpenGL)
+target_link_libraries(GLGui glad glm Qt5::Core Qt5::Widgets Qt5::Gui Qt5::OpenGL)
 
 

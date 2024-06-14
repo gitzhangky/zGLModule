@@ -1,4 +1,8 @@
 
+#ifndef SHADERBASE_H__
+#define SHADERBASE_H__
+
+
 #include<string>
 #include<iostream>
 #include <filesystem>
@@ -29,3 +33,9 @@ public:
 	*/
 	virtual bool initShaderProgram() = 0;
 };
+
+
+
+
+#endif // !SHADERBASE_H__
+
