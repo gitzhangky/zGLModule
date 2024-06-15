@@ -8,9 +8,8 @@ namespace widgets
 		_ui = new Ui::Mainwindow;
 		_ui->setupUi(this);
 
-
 		openGLWidget = new OpenGLWidget(this);
-
+		setWindowIcon(QIcon(":/new/prefix1/11.ico"));
 		QHBoxLayout* hLayout = new QHBoxLayout(_ui->widget);
 		hLayout->addWidget(openGLWidget);
 		hLayout->setMargin(0);
