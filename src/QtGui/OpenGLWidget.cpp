@@ -15,7 +15,7 @@ namespace widgets
 		bool isOk = render->initGlad();       //×¢Òâ£ºgladLoadGL()±ØÐëÐ´ÔÚinitializeGL()º¯ÊýÖÐ£¬·ñÔò»á³ö´í£¬±ÜÃâ²È¿Ó£¡
 		if (!isOk)
 		{
-			QMessageBox::warning(this, "´íÎóÌáÐÑ", "äÖÈ¾¿â¼ÓÔØÊ§°Ü!", QMessageBox::Ok);
+			QMessageBox::warning(this, tr("error warning"), tr("Rendering library loading failed!"), QMessageBox::Ok);
 		}
 		render->initShaderProgram();
 		render->init_Vertext();

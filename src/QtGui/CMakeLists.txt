@@ -10,11 +10,11 @@ file(GLOB QT_FORMS ${CMAKE_CURRENT_SOURCE_DIR}/*.ui)    #获取ui文件
 
 QT5_WRAP_UI(QT_FORMS_H ${QT_FORMS})
 
-qt5_add_resources(resource_file,${CMAKE_CURRENT_SOURCE_DIR}/../../resourceFiles/res.qrc)
-message(${CMAKE_CURRENT_SOURCE_DIR}/../../resourceFiles/res.qrc)
-add_library(QtGui ${ALL_SOURCE} ${resource_file} ${QT_FORMS_H})
+qt5_add_resources(qrc_files ${CMAKE_CURRENT_SOURCE_DIR}/Resource.qrc)
 
-get_filename_component(VAR ${QT_FORMS_H} DIRECTORY)
+add_library(QtGui ${ALL_SOURCE} ${QT_FORMS_H} ${qrc_files})
+list(GET QT_FORMS_H 0 FIRST_ELEMENT)
+get_filename_component(VAR ${FIRST_ELEMENT} DIRECTORY)
 
 include_directories(${VAR})
 include_directories(${PROJECT_SOURCE_DIR}/../GLGui)

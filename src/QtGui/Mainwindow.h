@@ -15,6 +15,11 @@ namespace widgets
 	public:
 		Mainwindow(QWidget* parent = nullptr);
 
+		void initTreeWidget();
+
+
+	public slots:
+		void slot_contextMenu(const QPoint& pos);
 
 	private:
 		OpenGLWidget* openGLWidget;
